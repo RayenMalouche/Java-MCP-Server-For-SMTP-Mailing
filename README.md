@@ -44,13 +44,13 @@ private static final boolean SMTP_SSL_ENABLED = false;
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/RayenMalouche/MCP-Server-For-Mailing-sdk-0.11.0.git
-   cd MCP-Server-For-Mailing-Sdk-0.11.0
+   git clone https://github.com/RayenMalouche/Java-MCP-Server-For-SMTP-Mailing.git
+   cd Java-MCP-Server-For-SMTP-Mailing
    ```
 
 2. **Configure your email settings**
    ```bash
-   # Edit Application.java with your credentials
+   # Edit application.properties with your credentials
    ```
 
 3. **Build the project**
@@ -67,11 +67,11 @@ This is the absolute path to where you cloned/downloaded the project:
 
 **Windows:**
 - Right-click on the project folder → Properties → Location
-- Example: `C:\Users\YourName\Documents\MCP-Server-For-Mailing-Sdk-0.11.0`
+- Example: `C:\Users\YourName\Documents\Java-MCP-Server-For-SMTP-Mailing`
 
 **macOS/Linux:**
 - In terminal, navigate to project folder and run: `pwd`
-- Example: `/home/username/MCP-Server-For-Mailing-Sdk-0.11.0`
+- Example: `/home/username/Java-MCP-Server-For-SMTP-Mailing`
 
 ### 2. Java Executable Path (`<JAVA_EXECUTABLE_PATH>`)
 **Windows:**
@@ -128,6 +128,7 @@ The server supports three different transport protocols. Choose the one that bes
 
 #### Testing with MCP Inspector
 ```bash
+#From inside your project :
 # 1. Start the server
 java -jar target/RayenMalouche-0.0.1-SNAPSHOT.jar --stdio
 
@@ -139,6 +140,7 @@ npx @modelcontextprotocol/inspector java -jar "<FULL_PATH_TO_PROJECT>/target/Ray
 Add this configuration to your Claude Desktop config file:
 
 **For Windows:**
+<JAVA_EXECUTABLE_PATH> : Normally in C:\Program Files\Common Files\Oracle\Java\javapath
 ```json
 {
   "mcpServers": {
@@ -156,7 +158,13 @@ Add this configuration to your Claude Desktop config file:
   }
 }
 ```
-
+You can ommit this part
+```json
+,
+"env": {
+"JAVA_HOME": "<JAVA_HOME_PATH>"
+}
+```
 **For macOS/Linux:**
 ```json
 {
