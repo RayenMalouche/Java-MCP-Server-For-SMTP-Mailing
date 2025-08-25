@@ -1,0 +1,11 @@
+spring.application.name=V4-MCP-Sdk-0.8
+
+# Required: Your email credentials
+smtp.username=<your gmail>@gmail.com
+smtp.password=<your application password>
+
+# Optional: SMTP server settings (Gmail defaults shown)
+smtp.host=smtp.gmail.com
+smtp.port=587
+smtp.ssl.enabled=false
+smtp.tls.enabled=true
