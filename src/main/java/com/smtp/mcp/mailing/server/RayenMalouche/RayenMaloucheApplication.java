@@ -84,6 +84,9 @@ public class RayenMaloucheApplication {
 
 			System.err.println("STDIO MCP server started. Awaiting requests...");
 
+			// Block the main thread to keep the JVM running
+			Thread.currentThread().join();
+
 		} catch (Exception e) {
 			System.err.println("Fatal error in STDIO server: " + e.getMessage());
 			e.printStackTrace(System.err);
